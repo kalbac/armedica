@@ -85,9 +85,9 @@ gulp.task('serv', function(){
     return gulp.src('dist/**/*')
         .pipe(ghPages({
             remoteUrl: 'https://github.com/kalbac/armedica.git',
-            //origin:'origin',
-            //branch:'master',
-            //branch:'build'
+            origin:'origin',
+            branch:'master',
+            cacheDir: '.deploy'
         }));
 })
 
