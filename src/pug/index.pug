@@ -4,6 +4,143 @@ html(lang="ru")
     body
         .container
             .row
-                .col
-                    p text here
+                .col.header
+                    .header-logo
+                        img(src="img/logo.png",alt="Название сайта")
+                    .header-phones
+                        span.font-spectral +7 (499) 737-23-74
+                        span.font-spectral +7 (499) 450-31-81
+                    .header-callback
+                        button Записаться на обследование
+        .banner-head
+            .banner-head__bg
+            .container
+                .row
+                    .col-12.col-xl-7
+                        .banner-head__text
+                            h1 Эстетическая гинекология
+                                br
+                                | В клинике Армедика
+                            p Наша клиника единственная в Москве предоставляет услугу безоперационной вагинальной пластики для лечения стрессового недержания мочи и синдрома вагинальной релаксации, при помощи лазерного аппарата последнего поколения корейской компании «LUTRONIC».
+                        .banner-head__quote
+                            span.quote Наш приоритет — надежное решение проблем женского здоровья и улучшения качества жизни.
+                .row
+                    .col-12.col-xl-7.order-xl-2
+                        .banner-head__carousel.carousel.slide(data-ride="carousel",data-interval="8500",id="banner_carousel")
+                            .carousel-inner
+                                .banner-head__carousel-item.carousel-item.active
+                                    span.big-num.font-spectral 30%
+                                    span.text Женщин не получают удовлетворения от половой жизни по причине синдрома вагинальной релаксации
+                                .banner-head__carousel-item.carousel-item
+                                    span.big-num.font-spectral 5%
+                                    span.text Мужчин не довольны что их женьщины не получают удовольствие от половой жизни по какой то причине
+                                .banner-head__carousel-item.carousel-item
+                                    span.text А тут просто текст без всяких статистик в виде процентов. Нужен что бы проверить как это выглядет обычным текстом. И ещё одна строчка для симетрии =)
+                            a.banner-head__carousel-control.banner-head__carousel-control--prev(href="#banner_carousel",data-slide="prev")
+                                span.angle
+                            a.banner-head__carousel-control.banner-head__carousel-control--next(href="#banner_carousel",data-slide="next")
+                                span.angle
+                    .col-12.col-xl-5.order-xl-1
+                        .banner-head__bottom_btn
+                            button Получить консультацию
+        .container
+            .row
+                .col-12
+                    .info-block.mb-4
+                        span.text Достаточно 3 процедуры лазерной вагинальной пластики Petit Lady для вульво-вагинального омоложения без хирургического вмешательства
+                        img(src="img/doctor.png")
+
+        .section-about.section
+            .container
+                .row
+                    .col-12.col-md-6.col-xl-7
+                        .image-layer
+                    .col-12.col-md-6.col-xl-5
+                        h3.section-title Процедура Petit Lady —
+                            br
+                            | это лазерная подтяжка влагалища
+                        p.text Принципиальные условия которой — комфорт и безопасность.Воздействие лазера запускает важные биохимические процессы в слизистой влагалища, что стимулирует образование коллагена. Это ведет к сужению и укреплению стенок влагалища, значительному повышению эрогенной чувствительности и улучшению цвета промежности.
+        .section
+            .container
+                .row
+                    .col-12.col-xl-7
+                        h3.section-title Что отличает процедуру Petit Lady от других способов вульво-вагинального омоложения?
+                    .col-12
+                        .row
+                            .col-12.col-md-6.col-xl-3
+                                .b-what
+                                    .b-what__icon.b-what__icon--certificate
+                                    .b-what__text Абсолютная безопасность в проведении процедуры
+                            .col-12.col-md-6.col-xl-3
+                                .b-what
+                                    .b-what__icon.b-what__icon--list
+                                    .b-what__text Отсутствие побочных эффектов после процедуры
+                            .col-12.col-md-6.col-xl-3
+                                .b-what
+                                    .b-what__icon.b-what__icon--secure
+                                    .b-what__text Гарантия результата в лечении вагинальных проблем
+                            .col-12.col-md-6.col-xl-3
+                                .b-what
+                                    .b-what__icon.b-what__icon--hand
+                                    .b-what__text Быстрое восстановление организма
+        .section-simptom
+            .container
+                .row
+                    .col-12.col-xl-7
+                        h3.section-title Процедура Petit Lady
+                            br
+                            | оптимальный выбор при
+                        ul.simptom-list
+                            li индроме вагинальной релаксации
+                            li опущение стенок влагалища
+                            li начальной стадии опущения матки
+                            li стрессовом недержании мочи
+                            li растянутости и ослаблении стенок влагалища
+                            li потери сексуальной удовлетворенности и отсутствии оргазмов
+                            li снижении упругости и чувствительности влагалища
+                            li появлении характерных звуков во время полового акта
+                            li неудовлетворенности цветом промежности
+            .section-simptom__image
+
+        .section-steps
+            .container
+                .row
+                    .col-12.col-md-6.col-xl-7
+                        h3.section-title 5 простых шагов
+                         br
+                         | процедуры Petit Lady
+                        .steps-images
+                            img(src="img/steps-image.png")
+                    .col-12.col-md-6.col-xl-5
+                        ul.steps-list
+                            li
+                                span.num 01
+                                span.text
+                                    a(href="") Отправить заявку
+                                    |  для получения консультации
+                            li
+                                span.num 02
+                                span.text Сдать анализ мазка на микрофлору и анализ крови для подготовки к лазерной пластике
+                            li
+                                span.num 03
+                                span.text Прийти на проведение вагинальной пластики
+                            li
+                                span.num 04
+                                span.text Подождать  2-3 недели до следующей процедуры
+                            li
+                                span.num 05
+                                span.text Возвращаетесь к нам еще на 2 процедуры
+                        i.steps-result.font-spectral В результате наслаждаетесь
+                            br
+                            | красотой и здоровьем!
+        .container
+            .row
+                .col-12
+                    .info-block.mb-4.mt-5
+                        span.text Вы можете быть уверены в результате, потому что мы проводим пластику с помощью лазерного аппарата корейской компании «LUTRONIC» «ACTION II»
+                        img(src="img/s4a.png")
+
+
+
+
         include  includes/_footer.pug

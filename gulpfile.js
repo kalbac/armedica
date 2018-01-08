@@ -39,6 +39,8 @@ gulp.task('serv', function(){
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe( browserSync.reload( { stream: true } ) )
+}).task( 'fonts', function(){
+    gulp.src( 'src/fonts/*.+(ttf|woff|woff2|svg|eot)').pipe( gulp.dest('dist/fonts')).pipe( browserSync.reload( { stream: true } ) )
 }).task('img', function() {
     return gulp.src('src/img/**/*')
         .pipe(cache(imagemin({
@@ -64,6 +66,7 @@ gulp.task('serv', function(){
     gulp.watch('src/pug/**/*.+(jade|pug)', ['pug']);
     gulp.watch('src/js/**/*.js', ['js']);
     gulp.watch('src/img/**/*', ['img']);
+    gulp.watch('src/fonts/*.+(ttf|woff|woff2|svg|eot)', ['fonts']);
     gulp.watch('src/sprite/**/*.png', ['sprite']);
 }).task('clean', function() {
     return del.sync('dist').then(function(cb) {
@@ -72,7 +75,7 @@ gulp.task('serv', function(){
 }).task('clean:dist', function() {
     return del.sync(['dist/**/*', '!dist/img', '!dist/img/**/*']);
 }).task('default', function(callback) {
-    runSequence(['watch', 'sass', 'serv', 'sprite', 'img', 'js', 'pug'],
+    runSequence(['watch', 'sass', 'serv', 'sprite', 'img', 'js', 'pug', 'fonts', 'deploy'],
         callback
     )
 }).task('build', function( callback ) {
