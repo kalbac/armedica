@@ -190,7 +190,17 @@
 		<div class="section-callback">
 			<div class="container">
 				<div class="row">
-					<div class="col-12 col-xl-7"></div>
+					<div class="col-12 col-xl-7">
+						<h3 class="section-title">Запишитесь<br>на консультацию к врачу</h3>
+						<p class="desc">Мы всегда рады проконсультировать Вас и провести экскурсию по нашей клинике</p>
+					</div>
+					<div class="col-12 col-xl-5">
+						<form action="mail.php" method="post" role="form" novalidate>
+							<input type="text" name="name" placeholder="Имя" required>
+							<input type="tel" name="phone" placeholder="Телефон" required>
+							<input type="submit" value="Записаться">
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
