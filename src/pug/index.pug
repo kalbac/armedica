@@ -11,30 +11,31 @@ html(lang="ru")
                         span.font-spectral +7 (499) 737-23-74
                         span.font-spectral +7 (499) 450-31-81
                     .header-callback
-                        button.move-to-form Записаться на обследование
+                        button.move-to-form.d-none.d-xl-block Записаться на обследование
+                        button.move-to-form.d-none.d-md-block.d-xl-none Записаться
         .banner-head
             .banner-head__bg
             .container
                 .row
                     .col-12.col-xl-7
                         .banner-head__text
-                            h1 Эстетическая гинекология
+                            h1.text-center.text-xl-left Эстетическая гинекология
                                 br
                                 | В клинике Армедика
-                            p Наша клиника единственная в Москве предоставляет услугу безоперационной вагинальной пластики для лечения стрессового недержания мочи и синдрома вагинальной релаксации, при помощи лазерного аппарата последнего поколения корейской компании «LUTRONIC».
+                            p.text-center.text-md-left Наша клиника единственная в Москве предоставляет услугу безоперационной вагинальной пластики для лечения стрессового недержания мочи и синдрома вагинальной релаксации, при помощи лазерного аппарата последнего поколения корейской компании «LUTRONIC».
                         .banner-head__quote
                             span.quote Наш приоритет — надежное решение проблем женского здоровья и улучшения качества жизни.
                 .row
                     .col-12.col-xl-7.order-xl-2
                         .banner-head__carousel.carousel.slide(data-ride="carousel",data-interval="8500",id="banner_carousel")
                             .carousel-inner
-                                .banner-head__carousel-item.carousel-item.active
+                                .banner-head__carousel-item.carousel-item.active.text-center.text-md-left
                                     span.big-num.font-spectral 30%
                                     span.text Женщин не получают удовлетворения от половой жизни по причине синдрома вагинальной релаксации
-                                .banner-head__carousel-item.carousel-item
+                                .banner-head__carousel-item.carousel-item.text-center.text-md-left
                                     span.big-num.font-spectral 5%
                                     span.text Мужчин не довольны что их женьщины не получают удовольствие от половой жизни по какой то причине
-                                .banner-head__carousel-item.carousel-item
+                                .banner-head__carousel-item.carousel-item.text-center.text-md-left
                                     span.text А тут просто текст без всяких статистик в виде процентов. Нужен что бы проверить как это выглядет обычным текстом. И ещё одна строчка для симетрии =)
                             a.banner-head__carousel-control.banner-head__carousel-control--prev(href="#banner_carousel",data-slide="prev")
                                 span.angle
@@ -47,7 +48,7 @@ html(lang="ru")
             .row
                 .col-12
                     .info-block.mb-4
-                        span.text Достаточно 3 процедуры лазерной вагинальной пластики Petit Lady для вульво-вагинального омоложения без хирургического вмешательства
+                        span.text.text-center.text-md-left Достаточно 3 процедуры лазерной вагинальной пластики Petit Lady для вульво-вагинального омоложения без хирургического вмешательства
                         img(src="img/doctor.png")
 
         .section-about.section
@@ -55,7 +56,7 @@ html(lang="ru")
                 .row
                     .col-12.col-md-6.col-xl-7
                         .image-layer
-                    .col-12.col-md-6.col-xl-5
+                    .col-12.col-md-6.col-xl-5.block-layer
                         h3.section-title Процедура Petit Lady —
                             br
                             | это лазерная подтяжка влагалища
@@ -64,7 +65,7 @@ html(lang="ru")
             .container
                 .row
                     .col-12.col-xl-7
-                        h3.section-title Что отличает процедуру Petit Lady от других способов вульво-вагинального омоложения?
+                        h3.section-title.text-center.text-md-left Что отличает процедуру Petit Lady от других способов вульво-вагинального омоложения?
                     .col-12
                         .row
                             .col-12.col-md-6.col-xl-3
@@ -105,13 +106,13 @@ html(lang="ru")
         .section-steps
             .container
                 .row
-                    .col-12.col-md-6.col-xl-7
+                    .col-12.col-xl-7.steps-head
                         h3.section-title 5 простых шагов
                          br
                          | процедуры Petit Lady
                         .steps-images
                             img(src="img/steps-image.png")
-                    .col-12.col-md-6.col-xl-5
+                    .col-10.col-md-8.col-xl-5.offset-1.offset-md-2.offset-xl-0
                         ul.steps-list
                             li
                                 span.num 01
@@ -154,13 +155,13 @@ html(lang="ru")
                             li Устройство оснащено обычным режимом лазерной шлифовки и длительным импульсным режимом коагуляции
                     .col-12.col-xl-5
                         .apparat-image
-                            img(src="img/apparat.png")
+                            img.img-fluid(src="img/apparat.png")
         .section-about.section
             .container
                 .row
                     .col-12.col-md-6.col-xl-7
                         .image-layer.image-layer--doc
-                    .col-12.col-md-6.col-xl-5
+                    .col-12.col-md-6.col-xl-5.block-layer
                         h3.section-title Гармония красоты и здоровья пациентов — цель команды клиники Армедика
                         p.text Наши врачи - доктора и кандидаты медицинских наук, врачи высшей категории. Ежегодно участвуют в медицинских европейских и отечественных конференциях.
                         p.bottom-text Мы помогаем восстановить здоровье уже более 5 лет!
@@ -169,9 +170,7 @@ html(lang="ru")
             .container
                 .row
                     .col-12.col-xl-4
-                        h3.section-title Клиника Армедика - это центр медицинской помощи женщинам и детям.
-                            br
-                            | Наш спектр  услуг:
+                        h3.section-title Клиника Армедика - это центр медицинской помощи женщинам и детям. Наш спектр  услуг:
                         .services-nav
                     .col-12.col-xl-8
                         .service-list
@@ -210,12 +209,12 @@ html(lang="ru")
         .section-callback(id="callback")
             .container
                 .row
-                    .col-12.col-xl-7
-                        h3.section-title Запишитесь
+                    .col-12.col-md-10.offset-md-1.offset-xl-0.col-xl-7
+                        h3.section-title.text-center.text-xl-left Запишитесь
                             br
                             | на консультацию к врачу
-                        p.desc Мы всегда рады проконсультировать Вас и провести экскурсию по нашей клинике
-                    .col-12.col-xl-5
+                        p.desc.text-center.text-xl-left Мы всегда рады проконсультировать Вас и провести экскурсию по нашей клинике
+                    .col-12.col-md-8.offset-md-2.offset-xl-0.col-xl-5
                         form(id="needs-validation",action="mail.php",method="post",role="form",novalidate)
                             input(type="text",class="form-control",name="name",placeholder="Имя",required)
                             input(type="tel",class="form-control",name="phone",placeholder="Телефон",required)

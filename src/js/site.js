@@ -34,15 +34,41 @@ jQuery( document ).ready( function( $ ) {
         useCSS:true,
         appendArrows:$('.services-nav')
     });
-    $( '.reviews-list').slick({
+    var reviews_list = $( '.reviews-list').slick({
         slide:'.reviews-list__item',
         slidesToShow:1,
         slidesToScroll:1,
         fade:true,
         prevArrow:'<div class="banner-head__carousel-control banner-head__carousel-control--prev slick-prev"><span class="angle"></span></div>',
         nextArrow:'<div class="banner-head__carousel-control banner-head__carousel-control--next slick-next"><span class="angle"></span></div>',
-        appendArrows:$('.reviews-nav')
+        appendArrows:$('.reviews-nav'),
+        responsive: [
+            {
+                breakpoint: 480,
+                settings: {
+                    fade:false,
+                    adaptiveHeight:true
+                }
+            }
+        ]
     });
+    if( 480 > window.innerWidth ) {
+        $( '.reviews-list__item').each( function( i, element ){
+            var text = $( element ).find( '.text' );
+            if( text.prop('scrollHeight') > 345 ) {
+                var $toggle = $( '<span />', {
+                    text:'Показать весь отзыв',
+                    class:'show-review'
+                }).on( 'click', function(e){
+                    text.css({'max-height':'100%'});
+                    reviews_list.slick('refresh');
+                    $( e.target ).remove();
+                });
+                text.parent().append($toggle);
+            }
+        });
+    }
+
     $( '#needs-validation').on( 'submit', function( e ){
         e.preventDefault();
         var $self = this;

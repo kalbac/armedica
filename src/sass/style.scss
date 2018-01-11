@@ -3,6 +3,7 @@
 @import "../../node_modules/bootstrap/scss/grid";
 @import "../../node_modules/bootstrap/scss/carousel";
 @import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/images";
 @import "fonts";
 @import "../sprite/sprite";
 
@@ -34,75 +35,159 @@ button:hover {
   padding-top: 30px;
   padding-bottom: 32px;
   &-logo {
-    width: 300px;
+    width: 70px;
     float: left;
+    overflow: hidden;
+    @include media-breakpoint-up(xl) {
+      width: 300px;
+    }
   }
   &-phones {
-    width: 570px;
+    width: calc(100% - 70px);
     float: left;
-    font-size: 20px;
-    line-height: 4rem;
+    font-size: 14px;
+    line-height: 3rem;
     font-weight: bold;
+    @include media-breakpoint-up(md) {
+      width: 425px;
+      font-size: 20px;
+      line-height: 4rem;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 570px;
+    }
     span:first-child {
-      margin-right: 55px;
+      margin-right: 22px;
+      margin-left: 10px;
+      @include media-breakpoint-up(md) {
+        margin-right: 35px;
+        margin-left: 20px;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-right: 55px;
+        margin-left: 0;
+      }
     }
   }
   &-callback {
-    float: left;
+    float: right;
+    @include media-breakpoint-up(xl) {
+      float: left;
+    }
     button {
       @include button-outline-variant( $theme-green-color );
       @include button-variant( $theme-green-color, $theme-green-color );
       @include button-size( 20px, 32px, 1rem, 150%, 3px );
-
       color:#FFF;
       font-weight: 600;
       cursor: pointer;
+      width: 195px;
+      @include media-breakpoint-up(xl) {
+        width: auto;
+      }
     }
   }
 }
 
 .banner-head {
   position: relative;
+  color: $white;
+  @include media-breakpoint-up(md) {
+    color: $theme-green-dark;
+  }
   &__bg {
     position: absolute;
     right: 0;
-    width: 43.5%;
+    width: 100%;
     height: 100%;
-    background: url("../img/promo-banner.jpg") center;
     background-size: cover;
+    background: url("../img/promo-banner.jpg") no-repeat -200px 50%;
+    @include media-breakpoint-up(md) {
+      background-position: 35% -70px;;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 43.5%;
+      background-position: center;
+    }
     &:before {
       content: "";
-      background-color: transparentize( #f5b8cb, .8 );
       position: absolute;
       width: 100%;
       height: 100%;
+      @include media-breakpoint-up(md) {
+        background: rgb(255, 255, 255);
+        background: -moz-linear-gradient(91deg, rgba(255, 255, 255,.2) 30%, rgb(255, 255, 255) 45%);
+        background: -webkit-linear-gradient(91deg, rgba(255, 255, 255,.2) 30%, rgb(255, 255, 255) 45%);
+        background: -o-linear-gradient(91deg, rgba(255, 255, 255,.2) 30%, rgb(255, 255, 255) 45%);
+        background: -ms-linear-gradient(91deg, rgba(255, 255, 255,.2) 30%, rgb(255, 255, 255) 45%);
+        background: linear-gradient(181deg, rgba(255, 255, 255,.2) 30%, rgb(255, 255, 255) 45%);
+      }
+      @include media-breakpoint-up(xl) {
+        background: transparentize( #f5b8cb, .8 );
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: transparentize( #423237, .2 );
+      @include media-breakpoint-up(md) {
+        background-color:transparent;
+      }
     }
   }
   &__text {
-    max-width: 560px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 275px;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 560px;
+      margin-top: 0;
+    }
     h1 {
-      font-size: 40px;
+      font-size: 24px;
       font-family: MuseoRegular, sans-serif;
       font-weight: 500;
       line-height: 1.2;
       margin-top: 50px;
       margin-bottom: 30px;
+      @include media-breakpoint-up(md) {
+        font-size: 40px;
+      }
     }
     p {
-      font-size: 18px;
+      font-size: 14px;
+      @include media-breakpoint-up(md) {
+        font-size: 18px;
+      }
     }
   }
 
   &__quote {
-    max-width: 600px;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    @include media-breakpoint-up(md) {
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 600px;
+    }
   }
 
   &__bottom_btn {
     text-align: center;
     padding-top: 40px;
     padding-bottom: 10px;
+    margin-bottom: 2rem;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
     button {
       @include button-outline-variant( $theme-green-color );
       @include button-variant( $theme-green-color, $theme-green-color );
@@ -110,114 +195,214 @@ button:hover {
       color:#FFF;
       font-weight: 600;
       cursor: pointer;
+      width: 100%;
+      @include media-breakpoint-up(md) {
+        max-width: 628px;
+      }
+      @include media-breakpoint-up(xl) {
+        max-width: 300px;
+      }
     }
   }
 
   &__carousel {
-    background-color: $white;
-    padding-top: 40px;
-    padding-bottom: 10px;
-    border-top-right-radius: 8px;
-    min-height: 130px;
-    .carousel-inner {
-      max-width: 475px;
+    @include media-breakpoint-up(md) {
+      background-color: $white;
+      padding-top: 40px;
+      padding-bottom: 10px;
+      border-top-right-radius: 8px;
+      min-height: 130px;
+      max-width: 630px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    &-item {
 
+    .carousel-inner {
+      max-width: 290px;
+      margin-left: auto;
+      margin-right: auto;
+      @include media-breakpoint-up(md) {
+        max-width: 475px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &-item {
       .big-num {
-        float: left;
-        line-height: 1.1;
-        margin-right: 2rem;
+        width: 100%;
+        display: inline-block;
+        @include media-breakpoint-up(md) {
+          float: left;
+          line-height: 1.1;
+          margin-right: 2rem;
+          width: auto;
+        }
+      }
+      .text {
+        font-size: 14px;
+        @include media-breakpoint-up(md) {
+          font-size: 1rem;
+        }
       }
     }
     &-control {
-      border: 1px solid rgb(192, 204, 197);
-      border-radius: 50%;
-      position: absolute;
-      width: 46px;
-      height: 46px;
-      bottom: calc(50% - 46px);
-      text-align: center;
-      line-height: 43.5px;
-      .angle {
-        display: inline-block;
-      }
-      &--prev {
-        right: 80px;
+      display: none;
+      @include media-breakpoint-up(md) {
+        display: block;
+        border: 1px solid rgb(192, 204, 197);
+        border-radius: 50%;
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        bottom: calc(50% - 46px);
+        text-align: center;
+        line-height: 43.5px;
         .angle {
-          @include sprite( $angle-left );
+          display: inline-block;
         }
-      }
-      &--next {
-        right: 20px;
-        .angle {
-          @include sprite( $angle-right );
+        &--prev {
+          right: 80px;
+          .angle {
+            @include sprite( $angle-left );
+          }
         }
+        &--next {
+          right: 20px;
+          .angle {
+            @include sprite( $angle-right );
+          }
 
+        }
       }
+
     }
   }
+
 }
 
 .quote {
   position: relative;
   font-family: MuseoRegular, sans-serif;
   font-weight: 500;
-  font-size: 24px;
-  color:#57665e;
-  padding-left: 70px;
+  font-size: 15px;
+  color:#52ffa3;
   display: inline-block;
+  text-align: center;
+  @include media-breakpoint-up(md) {
+    font-size: 24px;
+    color:#57665e;
+    padding-left: 40px;
+    text-align: left;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-left: 70px;
+  }
   &:before {
-    position: absolute;
-    content: "";
-    width: 6px;
-    height: 100%;
-    top: 0;
-    left: 35px;
-    background-color: #9bdec0;
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      content: "";
+      width: 6px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #9bdec0;
+    }
+    @include media-breakpoint-up(xl) {
+      left: 35px;
+    }
   }
 }
 
 .big-num {
-  font-size: 72px;
+  font-size: 48px;
   font-weight: bold;
+  @include media-breakpoint-up(md) {
+    font-size: 72px;
+  }
 }
 
 .info-block {
   position: relative;
-  border-radius: 16px;
   background-color: rgb(251, 243, 241);
-  padding: 40px 70px 30px;
-  margin-top: 105px;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding: 22px 30px 0;
+  overflow: hidden;
+  @include media-breakpoint-up(md) {
+    margin-top: 55px;
+    border-radius: 16px;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 35px 35px 30px;
+    overflow: inherit;
+  }
+  @include media-breakpoint-up(xl) {
+    padding: 40px 70px 30px;
+    margin-top: 105px;
+  }
   .text {
-    font-size: 24px;
+    font-size: 14px;
     color:#544946;
-    max-width: 725px;
+    margin-bottom: 1rem;
     display: inline-block;
+    @include media-breakpoint-up(md) {
+      font-size: 20px;
+      max-width: 410px;
+      margin-bottom: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 725px;
+      font-size: 24px;
+    }
   }
   & > img {
-    position: absolute;
-    bottom: 0;
-    right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      bottom: 0;
+      right: -25px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      right: 30px;
+    }
   }
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 20px;
   font-family: MuseoRegular, sans-serif;
   font-weight: 500;
+  position: relative;
+  @include media-breakpoint-up(md) {
+    font-size: 24px;
+  }
 }
 
 .section-about {
-  margin-top: 5rem;
+  @include media-breakpoint-up(md) {
+    margin-top: 5rem;
+  }
+
   .section-title {
-    margin-top: 10px;
-    margin-bottom: 50px;
+
+    @include media-breakpoint-up(xl) {
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
   }
   p.text {
-    font-size: 18px;
-    margin-bottom: 50px;
+    font-size: 1rem;
+    margin-bottom: 20px;
     line-height: 30px;
+    @include media-breakpoint-up(xl) {
+      font-size: 18px;
+      margin-bottom: 50px;
+    }
   }
   p.bottom-text {
     color:#57665e;
@@ -227,43 +412,104 @@ button:hover {
 }
 
 .section {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.block-layer {
+  &:before {
+    position: absolute;
+    content: "";
+    background-color: #eaf6f0;
+    width: 70px;
+    height: calc(100% + 20px);
+    top: -25px;
+    left: -15px;
+  }
+  .text,
+  .bottom-text {
+    position: relative;
+  }
+  @include media-breakpoint-up(md) {
+    &:before {
+      position: relative;
+      display: none;
+    }
+  }
 }
 
 .image-layer {
   position: relative;
   height: 100%;
+  @include media-breakpoint-up(md) {
+    min-height: 375px;
+    left: -12%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    left: 0;
+  }
   &:before {
     position: absolute;
     content: "";
     background-color: #eaf6f0;
-    width: calc(100% + 35px);
-    height: calc(100% + 35px);
-    left: 70px;
-    bottom: 0;
-    top:auto;
+    @include media-breakpoint-up(md) {
+      width: calc(100% + 105px);
+      height: calc(100% + 35px);
+      left: 0;
+      bottom: 0;
+      top:auto;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: calc(100% + 35px);
+      left: 70px;
+    }
   }
   &:after {
-    position: absolute;
-    content: "";
-    background: url("../img/mom-baby.jpg") 0 center no-repeat;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      content: "";
+      background: url("../img/mom-baby.jpg") 0 center no-repeat;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+    }
+
   }
   &--doc {
     &:after {
-      background-image: url("../img/doctor-women.jpg");
+
+      @include media-breakpoint-up(md) {
+        background-image: url("../img/doctor-women.jpg");
+        background-position: -125px center;
+      }
+
+      @include media-breakpoint-up(xl) {
+        background-position: 0 50%;
+      }
     }
   }
 }
 
 .b-what {
-  margin-top: 42px;
-  margin-bottom: 24px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  @include media-breakpoint-up(md) {
+    margin-top: 42px;
+    margin-bottom: 24px;
+  }
   &__icon {
-    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 2rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
     &--certificate {
       @include sprite( $icon-certificate );
     }
@@ -280,43 +526,78 @@ button:hover {
   &__text {
     font-size: 1rem;
     line-height: 26px;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      max-width: 250px;
+      text-align: left;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 270px;
+    }
   }
 }
 
 .section-simptom {
   background-color: #fbf3f1;
   position: relative;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 1rem;
+  @include media-breakpoint-up(md) {
+    padding-top: 56px;
+    padding-bottom: 350px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   &__image {
-    background: url("../img/simptom-image.jpg") 100% center no-repeat;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 43.5%;
-    height: 100%;
-    background-size: cover;
-    &:before {
-      display: inline-block;
+    @include media-breakpoint-up(md) {
+      background: url("../img/simptom-image.jpg") 100% center no-repeat;
+      position: absolute;
+      top: auto;
+      bottom: 0;
       width: 100%;
+      height: 350px;
+      background-size: cover;
+    }
+
+    @include media-breakpoint-up(xl) {
+      top: 0;
+      right: 0;
+      width: 43.5%;
       height: 100%;
-      content: "";
-      background-color: transparentize( #f5b8cb, .6 );
+    }
+    &:before {
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: transparentize( #f5b8cb, .6 );
+      }
+
     }
   }
 
   .simptom-list {
     padding-left: 0;
-    margin-top: 2rem;
-    max-width: 600px;
     list-style: none;
+    @include media-breakpoint-up(md) {
+      margin-top: 2rem;
+      max-width: 600px;
+    }
     & > li {
       position: relative;
-      font-size: 18px;
-      line-height: 30px;
+      font-size: 14px;
+      line-height: 22px;
       display: inline-block;
-      padding-left: 70px;
-      margin-bottom: 1rem;
+      padding-left: 25px;
+      margin-bottom: .5rem;
+      @include media-breakpoint-up(md) {
+        padding-left: 70px;
+        margin-bottom: 1rem;
+        font-size: 18px;
+        line-height: 30px;
+      }
       &:before {
         position: absolute;
         content: "";
@@ -324,31 +605,107 @@ button:hover {
         height: 13px;
         border-radius: 50%;
         background-color: $theme-green-color;
-        top: 13px;
-        left: 22px;
+        top: 5px;
+        left: 0;
+        @include media-breakpoint-up(md) {
+          top: 13px;
+          left: 22px;
+        }
       }
     }
   }
 }
 
 .section-steps {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  background: url(../img/steps-image.png) no-repeat;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #FFF;
+    background: -moz-linear-gradient(91deg, rgba(255, 255, 255,.2) 20%, rgb(255, 255, 255) 35%);
+    background: -webkit-linear-gradient(91deg, rgba(255, 255, 255,.2) 20%, rgb(255, 255, 255) 35%);
+    background: -o-linear-gradient(91deg, rgba(255, 255, 255,.2) 20%, rgb(255, 255, 255) 35%);
+    background: -ms-linear-gradient(91deg, rgba(255, 255, 255,.2) 20%, rgb(255, 255, 255) 35%);
+    background: linear-gradient(181deg, rgba(255, 255, 255,.2) 20%, rgb(255, 255, 255) 35%);
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: transparent;
+  }
+  .steps-head {
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      height: 475px;
+    }
+    @include media-breakpoint-up(xl) {
+      height: auto;
+    }
+  }
+
   .section-title {
-    font-size: 2rem;
-    margin-left: 70px;
+    margin-top: 350px;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      text-align: left;
+      margin-top: 0;
+      font-size: 2rem;
+      position: absolute;
+      left: 45%;
+      top:calc(50% - 2rem);
+      z-index: 1;
+    }
+    @include media-breakpoint-up(xl) {
+      position: relative;
+      margin-left: 70px;
+      left: auto;
+      top: auto;
+    }
   }
   .steps-images {
-    margin-top: -13px;
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+      position: absolute;
+      top: 0;
+      max-height: 100%;
+      left: -4%;
+      max-width: 525px;
+    }
+    & > img {
+      @extend .img-fluid;
+      max-height: 100%;
+    }
+    @include media-breakpoint-up(xl) {
+      position: relative;
+      margin-top: -13px;
+      top: auto;
+      left: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
   }
   .steps-list {
     padding: 0;
-    max-width: 460px;
     display: block;
     margin: 2rem auto 1rem auto;
+    @include media-breakpoint-up(md) {
+      max-width: 460px;
+    }
     & > li {
       list-style: none;
       width: 100%;
+      text-align: center;
+      @include media-breakpoint-up(md) {
+        text-align: left;
+      }
       & > span {
         display: inline-block;
       }
@@ -357,12 +714,18 @@ button:hover {
         font-family: Spectral, sans-serif;
         color:#f5b8cb;
         font-weight: 700;
-        width: 100px;
+        @include media-breakpoint-up(md) {
+          width: 100px;
+        }
       }
       & > .text {
-        font-size: 18px;
-        line-height: 30px;
-        width: calc(100% - 100px);
+        font-size: 14px;
+        line-height: 24px;
+        @include media-breakpoint-up(md) {
+          font-size: 18px;
+          line-height: 30px;
+          width: calc(100% - 100px);
+        }
         a {
           color: $theme-green-color;
           text-decoration: underline;
@@ -372,16 +735,26 @@ button:hover {
     }
   }
   .steps-result {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     color:#57665e;
-    float: right;
+    text-align: center;
+    display: inline-block;
+    @include media-breakpoint-up(md) {
+      font-size: 24px;
+      float: right;
+      text-align: left;
+    }
   }
 }
 
 .section-apparat {
-  margin-top: 3rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 3rem;
+  }
   .quote {
+    color:#57665e;
     margin-bottom: 3rem;
   }
   .apparat-list {
@@ -406,7 +779,10 @@ button:hover {
     }
   }
   .apparat-image {
-    margin-top: -135px;
+    text-align: center;
+    @include media-breakpoint-up(xl) {
+      margin-top: -135px;
+    }
   }
 }
 
@@ -423,15 +799,25 @@ button:hover {
 }
 
 .section-callback {
-  padding-top: 80px;
-  padding-bottom: 60px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  @include media-breakpoint-up(md) {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
   .section-title {
-    font-size: 40px;
+    font-size: 20px;
+    @include media-breakpoint-up(md) {
+      font-size: 40px;
+    }
   }
   p.desc {
     font-size: 18px;
     line-height: 30px;
-    max-width: 435px;
+    margin-bottom: 50px;
+    @include media-breakpoint-up(xl) {
+      max-width: 435px;
+    }
   }
   form {
     input[type=text],
@@ -458,7 +844,18 @@ button:hover {
       color:#FFF;
       font-weight: 600;
       cursor: pointer;
-      min-width: 300px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      @include media-breakpoint-up(md) {
+        width: auto;
+        min-width: 300px;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-left: 0;
+        margin-right: 0;
+      }
       &:disabled {
         cursor: progress;
         opacity: .6;
@@ -469,9 +866,31 @@ button:hover {
 }
 
 .section-services {
-  padding-top: 50px;
-  padding-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  @include media-breakpoint-up(xl) {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .section-title {
+    max-width: 560px;
+    float: left;
+    @include media-breakpoint-up(xl) {
+      max-width: 100%;
+    }
+  }
   .service-list {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-right: -15px;
+    @include media-breakpoint-up(md) {
+      margin-right: -5.2%;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-right: 0;
+    }
     &__item {
       width: 270px;
       height: 223px;
@@ -518,26 +937,62 @@ button:hover {
     }
   }
   .services-nav {
-    height: 49px;
+    height: 100%;
     position: relative;
+    width: calc(100% - 560px);
+    float: right;
+    @include media-breakpoint-up(xl) {
+      width: 100%;
+      float: left;
+      height: 49px;
+    }
     .slick-arrow {
       cursor: pointer;
+      top:calc(50% - 24.5px);
+      @include media-breakpoint-up(xl) {
+        top:auto;
+      }
     }
     .slick-prev {
-      left: 0;
+      left: auto;
+      right: 62px;
+      @include media-breakpoint-up(xl) {
+        left: 0;
+        right: auto;
+      }
     }
     .slick-next {
-      left: 59px;
+      left: auto;
+      right: 0;
+      @include media-breakpoint-up(xl) {
+        left: 59px;
+        right: auto;
+      }
     }
   }
 }
 
 .section-review {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 32px;
+  padding-bottom: 32px;
   background-color: #fbf3f1;
+  @include media-breakpoint-up(xl) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
   h3.section-title {
-    margin-top: 160px;
+    text-align: center;
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(md) {
+      width: 50%;
+      float: left;
+      text-align: left;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 160px;
+      width: 100%;
+      margin-bottom: 0;
+    }
   }
   .reviews-list {
     box-shadow: 0 0 40px 0 rgba(224, 148, 209, 0.4);
@@ -546,6 +1001,7 @@ button:hover {
     position: relative;
     z-index: 3;
     margin-right: 34px;
+
     &__item {
       border-radius: 14px;
       padding: 36px;
@@ -553,7 +1009,10 @@ button:hover {
         color:$theme-green-color;
         display: inline-block;
         width: 100%;
-        margin-bottom: 28px;
+        margin-bottom: 20px;
+        @include media-breakpoint-up(md) {
+          margin-bottom: 28px;
+        }
       }
       .text {
         @extend .font-spectral;
@@ -561,6 +1020,20 @@ button:hover {
         font-size: 1rem;
         line-height: 26px;
         font-weight: 500;
+        max-height: 345px;
+        overflow: hidden;
+        display: block;
+        @include media-breakpoint-up(md) {
+          max-height: 100%;
+        }
+      }
+      .show-review {
+        font-size: 14px;
+        @extend .font-spectral;
+        @extend .font-italic;
+        width: 100%;
+        color:$theme-green-color;
+        font-weight: 600;
       }
       &:focus {
         outline: none;
@@ -590,16 +1063,36 @@ button:hover {
 
   }
   .reviews-nav {
-    height: 49px;
+    height: 100%;
     position: relative;
+    width: 50%;
+    float: left;
+    @include media-breakpoint-up(xl) {
+      height: 49px;
+      width: 100%;
+    }
     .slick-arrow {
       cursor: pointer;
+      top:calc(50% - 24.5px);
+      @include media-breakpoint-up(xl) {
+        top:auto;
+      }
     }
     .slick-prev {
-      left: 0;
+      left: auto;
+      right: 62px;
+      @include media-breakpoint-up(xl) {
+        left: 0;
+        right: auto;
+      }
     }
     .slick-next {
-      left: 59px;
+      left: auto;
+      right: 0;
+      @include media-breakpoint-up(xl) {
+        left: 59px;
+        right: auto;
+      }
     }
   }
 }
